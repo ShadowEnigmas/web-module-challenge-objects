@@ -17,7 +17,7 @@ const soda = new createMenuItem('Soda', 2, 'Drinks');
 const pizza = new createMenuItem('Pizza', 17, 'Lunch');
 const steak = new createMenuItem('Steak', 20, 'Supper');
 
-
+console.log(soda, pizza, steak);
 /* Task 2: You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to your burger object that automatically calculates price given a string as a parameter. 
 
 Your method should accept: 
@@ -27,7 +27,16 @@ Your method should accept:
 and should return a number. 
 
 For example, burger.discount("teacher") would return 13.5 and burger.discount("public") would return 16.2*/
+burger.discount = function (string){
+  if (string === 'teacher' || string === 'student'){
+    return this.price * 0.75;
+  } else {
+    return this.price * 0.9;
+  }
+}
 
+console.log(burger.discount('teacher'));
+console.log(burger.discount('public'));
 
 
 ///////////////Reviews (MVP)///////////////////
@@ -43,7 +52,7 @@ const reviews = [{name: "Daniela", rating: 5, feedback:"Beautiful atmosphere and
 ]
 
 /* Task 3: Console.log just Julius' feedback */
-
+console.log(reviews[5].feedback);
 
 /* Task 4: Add a new rating with your (fictitious) opinions of the restaurant in the same format as the reviews above. */
 
